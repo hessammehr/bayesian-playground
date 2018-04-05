@@ -17,5 +17,6 @@ plot(l_x)
 end
 
 chn1 = sample(g_simple(x), HMC(1000, 1.5, 10))
+chn2 = sample(g_simple(x), PG(10,250))
 
 describe(chn1)

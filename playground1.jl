@@ -13,10 +13,10 @@ const primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
     end
     factors = primes[pr]
     prd = *(factors...)
-    n ~ DiscreteUniform(prd-1,prd+1)
+    n ~ Laplace(prd, 0.2)
     println("Factors: $factors, product: $prd, n: $n")
     return factors
 end
 
-c = sample(Factor(10), SMC(1000))
+c = sample(Factor(140), SMC(1000))
 describe(c)
